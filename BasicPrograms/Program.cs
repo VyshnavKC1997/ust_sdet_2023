@@ -70,7 +70,7 @@ Console.WriteLine("Total marks:{0}", studentGrade.CalculateTotal());
 Console.WriteLine("Average:{0}", studentGrade.CalculateAverage());
 Console.WriteLine("Grade:{0}",studentGrade.CalculateGrade());*/
 
-Console.WriteLine("1.Teaching staff\n2.Non Teaching Staff\nchoose an option");
+/*Console.WriteLine("1.Teaching staff\n2.Non Teaching Staff\nchoose an option");
 int option=Convert.ToInt32(Console.ReadLine());
 switch (option)
 {
@@ -101,5 +101,15 @@ switch (option)
     default: Console.WriteLine("Invalid input");
         break;
 }
+*/
+ElectricVehicle electricVehicle = new ElectricVehicle();
+electricVehicle.VehicleNumber = 1111;
+electricVehicle.Brand = "adsda";
+electricVehicle.Model = "asads";
+Console.WriteLine(electricVehicle.SetTypeForVehicle()); 
 
-
+PetrolVehicle petrolVehicle = new PetrolVehicle();
+petrolVehicle.VehicleNumber = 123;
+petrolVehicle.Brand = "ssaddsa";
+petrolVehicle.Model = "daadsdsa";
+Console.WriteLine(petrolVehicle.SetTypeForVehicle()); 

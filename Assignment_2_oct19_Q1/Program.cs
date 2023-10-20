@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Assignment_2_oct19_Q1;
+/*using Assignment_2_oct19_Q1;
 
 Product[] products = new Product[3];
 for (int i = 0; i < products.Length; i++)
@@ -17,6 +17,30 @@ for (int i = 0;i < products.Length; i++)
 {
     products[i].DisplayProduct();
     products[i].ProductValue();
-}
+}*/
+
+
+using Assignment_2_oct19_Q1;
+
+ElectronicProduct electronicProduct = new ElectronicProduct("Table", 23000, 30, 5);
+electronicProduct.DisplayProduct();
+electronicProduct.ProductValue();
+electronicProduct.ElectronicWarrenty();
+
+
+
+DigitalProduct digitalProduct=new DigitalProduct("Song", 24, 30, 5,"MP3");
+digitalProduct.DisplayProduct();
+digitalProduct.ProductValue();
+digitalProduct.ElectronicWarrenty();
+digitalProduct.DigitalProductFileFormatDisplay();
+
+ClothingProduct clothingProduct = new ClothingProduct("Shirt", 2000, 30, "Medium");
+clothingProduct.DisplayProduct();
+clothingProduct.ProductValue();
+clothingProduct.DisplayClothSize(); 
+  
+
+
 
 
