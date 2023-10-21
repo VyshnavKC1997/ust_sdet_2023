@@ -102,7 +102,7 @@ switch (option)
         break;
 }
 */
-ElectricVehicle electricVehicle = new ElectricVehicle();
+/*ElectricVehicle electricVehicle = new ElectricVehicle();
 electricVehicle.VehicleNumber = 1111;
 electricVehicle.Brand = "adsda";
 electricVehicle.Model = "asads";
@@ -113,3 +113,12 @@ petrolVehicle.VehicleNumber = 123;
 petrolVehicle.Brand = "ssaddsa";
 petrolVehicle.Model = "daadsdsa";
 Console.WriteLine(petrolVehicle.SetTypeForVehicle()); 
+*/
+
+Doctor doctor = new Doctor();
+doctor.AddNewDoctor();
+doctor.DisplayDoctorDEtails();
+doctor.ModifyDoctor();
+doctor.DisplayDoctorDEtails();
+doctor.BookApp(1,"IDJJDS");
+doctor.DeleteAppoinment(1, "HDHDFS");

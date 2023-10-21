@@ -15,7 +15,7 @@ for (int j = 0;j < 3;j++)
         marks[i] = Convert.ToInt32(Console.ReadLine());
     }
     Console.WriteLine("Enter the grade");
-    char grade=Convert.ToChar(Console.ReadLine());
+    char grade = Convert.ToChar(Console.ReadLine());
     student[j] = new Student(name,marks,grade);
 }
 for (int j = 0; j < 3; j++)
