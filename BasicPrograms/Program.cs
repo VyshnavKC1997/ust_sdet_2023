@@ -47,6 +47,7 @@ arrayClass.JaggedArray();*/
 
 
 using BasicPrograms;
+using System.Transactions;
 
 /*StudentMarks studentMarks = new StudentMarks(*//*12, "vyshnav", "trivandrum", 34, 43, 23, 0, 0.0*//*);
 studentMarks.RollNumber = 1;
@@ -115,10 +116,48 @@ petrolVehicle.Model = "daadsdsa";
 Console.WriteLine(petrolVehicle.SetTypeForVehicle()); 
 */
 
-Doctor doctor = new Doctor();
+/*Doctor doctor = new Doctor();
 doctor.AddNewDoctor();
 doctor.DisplayDoctorDEtails();
 doctor.ModifyDoctor();
 doctor.DisplayDoctorDEtails();
 doctor.BookApp(1,"IDJJDS");
-doctor.DeleteAppoinment(1, "HDHDFS");
+doctor.DeleteAppoinment(1, "HDHDFS");*/
+
+Bank bank = new  (12345, 412421421421L, "vyshnav", "active") ;
+/*Bank bank1 = new Bank();
+Bank bank2 = new Bank(1234,12421342,"hdash");*/
+BankModified bankModified = new BankModified(12345, 412421421421L, "vyshnav", "active");
+bankModified.WelcomeMessage();
+while (true)
+{
+    Console.WriteLine("Enter your choice\n1.Customer id\n2.Account Number\n3.Name");
+    int ch = Convert.ToInt32(Console.ReadLine());
+    switch (ch)
+    {
+
+        case 1:
+            Console.WriteLine("enter the customer id");
+            int cusID = Convert.ToInt32(Console.ReadLine());
+            bank.GetAccountDetails(cusID);
+            break;
+        case 2:
+            Console.WriteLine("enter the Account Number");
+            long Accountnum = Convert.ToInt64(Console.ReadLine());
+            bank.GetAccountDetails(Accountnum);
+            break;
+        case 3:
+            Console.WriteLine("enter Name");
+            bank.GetAccountDetails(Console.ReadLine());
+            break;
+        default:
+            Console.WriteLine("Invalid input");
+            break;
+    }
+    Console.WriteLine("do you want to continue yes-press any key no-1");
+    int option=Convert.ToInt32(Console.ReadLine());
+    if (option == 1)
+    {
+        break;
+    }
+}
