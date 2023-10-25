@@ -41,9 +41,9 @@ clothingProduct.ProductValue();
 clothingProduct.DisplayClothSize(); */
 
 using Assignment_2_oct19_Q1;
-
+/*
 Employee employee = new Employee(1, "vyshnav", "KC", 2);
-employee.Displayinfo();
+employee.Displayinfo();*/
 
 /*using Assignment_2_oct19_Q1;
 
@@ -52,4 +52,28 @@ circle.Draw();
 Rectangle rectangle = new Rectangle(5, 3);
 rectangle.Draw();*/
 
+/*InsurancePolicy insurancePolicy = new(12, "life policy", 150000);
+Console.WriteLine("enter the new policy amount");
+double policyamount=Convert.ToDouble(Console.ReadLine());   
+insurancePolicy.RenewPolicy(policyamount);
+Console.WriteLine("new Policy amount");
+insurancePolicy.Display();
+insurancePolicy.RenewPolicy();
+Console.WriteLine("auto increment new Policy amount " );
+insurancePolicy.Display();  */
 
+CarInsurance carInsurance = new CarInsurance();
+carInsurance.VehicleType = "private";
+carInsurance.PolicyId = 1;
+carInsurance.PolicyName = "Car insurance";
+carInsurance.PremiumAmount = 1000000;
+Console.WriteLine("policy id:{0}\tPolicy Name:{1}\tPremium Amount:{2}\tVehicle type:{3}",carInsurance.PolicyId
+    ,carInsurance.PolicyName,carInsurance.CalculatePremium(),carInsurance.VehicleType);
+
+LifeInsurance lifeInsurance = new LifeInsurance();
+lifeInsurance.PolicyId = 2;
+lifeInsurance.PolicyName = "Life insurance";
+lifeInsurance.PremiumAmount = 2000000;
+lifeInsurance.Age = 75;
+Console.WriteLine("policy id:{0}\tPolicy Name:{1}\tPremium Amount:{2}\tAge:{3}", lifeInsurance.PolicyId,
+    lifeInsurance.PolicyName, lifeInsurance.CalculatePremium(), lifeInsurance.Age);

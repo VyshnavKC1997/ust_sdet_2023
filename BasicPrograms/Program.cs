@@ -161,9 +161,13 @@ while (true)
         break;
     }
 }*/
-NonGenericCollections nonGenericCollections=new NonGenericCollections();
+/*NonGenericCollections nonGenericCollections=new NonGenericCollections();
 //nonGenericCollections.ArrayListHandling();
 //nonGenericCollections.StackHandling();
 //nonGenericCollections.QueueHandling();
 //nonGenericCollections.HashTableHandling();
-nonGenericCollections.SortedListHandling();
+nonGenericCollections.SortedListHandling();*/
+GenericCollection genericCollection = new GenericCollection();
+genericCollection.ListHandling();
+genericCollection.StackHandling();
+genericCollection.DictionaryHandling();
