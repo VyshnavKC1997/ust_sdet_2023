@@ -39,17 +39,17 @@ ClothingProduct clothingProduct = new ClothingProduct("Shirt", 2000, 30, "Medium
 clothingProduct.DisplayProduct();
 clothingProduct.ProductValue();
 clothingProduct.DisplayClothSize(); */
-/*
-using Assignment_2_oct19_Q1;
-
-Employee employee = new Employee(1, "vyshnav", "KC", 24);
-employee.DisplayInfo();*/
 
 using Assignment_2_oct19_Q1;
+
+Employee employee = new Employee(1, "vyshnav", "KC", 2);
+employee.Displayinfo();
+
+/*using Assignment_2_oct19_Q1;
 
 Circle circle = new Circle(3);
 circle.Draw();
 Rectangle rectangle = new Rectangle(5, 3);
-rectangle.Draw();
+rectangle.Draw();*/
 
 

@@ -16,7 +16,9 @@ namespace Assignment_2_oct19_Q1
 
        
 
-        public void Draw()
+       
+
+        public void Displayinfo()
         {
             Console.WriteLine("Employee Id:{3}\tFull Name:{0} {1}\tAge:{2}", FirstName, LastName, Age, employeeId);
         }

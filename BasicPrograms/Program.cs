@@ -124,9 +124,9 @@ doctor.DisplayDoctorDEtails();
 doctor.BookApp(1,"IDJJDS");
 doctor.DeleteAppoinment(1, "HDHDFS");*/
 
-Bank bank = new  (12345, 412421421421L, "vyshnav", "active") ;
-/*Bank bank1 = new Bank();
-Bank bank2 = new Bank(1234,12421342,"hdash");*/
+/*Bank bank = new  (12345, 412421421421L, "vyshnav", "active") ;
+*//*Bank bank1 = new Bank();
+Bank bank2 = new Bank(1234,12421342,"hdash");*//*
 BankModified bankModified = new BankModified(12345, 412421421421L, "vyshnav", "active");
 bankModified.WelcomeMessage();
 while (true)
@@ -160,4 +160,10 @@ while (true)
     {
         break;
     }
-}
+}*/
+NonGenericCollections nonGenericCollections=new NonGenericCollections();
+//nonGenericCollections.ArrayListHandling();
+//nonGenericCollections.StackHandling();
+//nonGenericCollections.QueueHandling();
+//nonGenericCollections.HashTableHandling();
+nonGenericCollections.SortedListHandling();

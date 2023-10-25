@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_2_oct19_Q1
 {
-    internal class Circle : Shape, IDisplayable
+    internal class Circle : Shape, IDrawable
     {
         double radius;
         const double pi = 3.14;

@@ -8,6 +8,6 @@ namespace Assignment_2_oct19_Q1
 {
     internal interface IDisplayable
     {
-        void Draw();
+        void Displayinfo();
     }
 }

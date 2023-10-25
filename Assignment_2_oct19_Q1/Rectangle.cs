@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_2_oct19_Q1
 {
-    internal class Rectangle : Shape,IDisplayable
+    internal class Rectangle : Shape,IDrawable
     {
         double length, breadth;
 
