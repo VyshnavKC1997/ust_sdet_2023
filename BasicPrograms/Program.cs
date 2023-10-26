@@ -47,6 +47,7 @@ arrayClass.JaggedArray();*/
 
 
 using BasicPrograms;
+using BasicPrograms.ExeptionMessage;
 using System.Transactions;
 
 /*StudentMarks studentMarks = new StudentMarks(*//*12, "vyshnav", "trivandrum", 34, 43, 23, 0, 0.0*//*);
@@ -167,7 +168,18 @@ while (true)
 //nonGenericCollections.QueueHandling();
 //nonGenericCollections.HashTableHandling();
 nonGenericCollections.SortedListHandling();*/
-GenericCollection genericCollection = new GenericCollection();
+/*GenericCollection genericCollection = new GenericCollection();
 genericCollection.ListHandling();
 genericCollection.StackHandling();
-genericCollection.DictionaryHandling();
+genericCollection.DictionaryHandling();*/
+
+ExceptionHandling exceptionHandling=new ExceptionHandling(15,45);
+//exceptionHandling.Divide();
+try
+{
+    exceptionHandling.numcheck();
+}
+catch(NumberOneException numExcep)
+{
+    Console.WriteLine(numExcep.Message);
+}
