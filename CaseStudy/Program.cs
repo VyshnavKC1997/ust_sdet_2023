@@ -200,11 +200,12 @@ while (true)
                     {
                         foreach (var item in customer.orders)
                         {
+                            Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
+                             item.ProductName, item.Price, item.ProductQuantity, item.FileFormat, item.DownloadLink);
                             item.PlacingOrder();
                             item.ProcessingPayment();
                             item.DeliveringProduct();
-                            Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
-                             item.ProductName, item.Price, item.ProductQuantity, item.FileFormat, item.DownloadLink);
+                            
                         }
                         foreach (var item in customer.ordersphy)
                         {
@@ -305,7 +306,9 @@ while (true)
                 Console.WriteLine("Enter the fileformat");
                 string? fileFormat=Console.ReadLine();
                 Console.WriteLine("Enter downloadLink");
-                string? downloadLink=Console.ReadLine();    
+                string? downloadLink=Console.ReadLine();
+                Console.WriteLine("Enter the Quantity");
+                int quantity=Convert.ToInt32(Console.ReadLine());
 
 
                 DigitalProduct digitalProduct = new DigitalProduct();
@@ -314,6 +317,7 @@ while (true)
                 digitalProduct.FileFormat = fileFormat;
                 digitalProduct.DownloadLink = downloadLink;
                 digitalProduct.Price = productCost;
+                digitalProduct.ProductQuantity = quantity;
                 DigitalProduct.Products.Add(digitalProduct);
             }
             else if(optionProduct==2)
@@ -328,6 +332,8 @@ while (true)
                 int weight = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter dimension");
                 string? dimension = Console.ReadLine();
+                Console.WriteLine("Enter the Quantity");
+                int quantity = Convert.ToInt32(Console.ReadLine());
 
                 PhysicalProduct physicalProduct = new PhysicalProduct();
                 physicalProduct.ProductName = productName;
@@ -335,6 +341,8 @@ while (true)
                 physicalProduct.Price = productCost;
                 physicalProduct.Dimension = dimension;
                 physicalProduct.Weight = weight;
+                physicalProduct.ProductQuantity = quantity;
+
 
                 PhysicalProduct.Products.Add(physicalProduct);
             }
