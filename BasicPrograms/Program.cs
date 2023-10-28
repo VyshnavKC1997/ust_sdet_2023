@@ -45,10 +45,10 @@ arrayClass.WriteArrayTwoDimension();
 
 arrayClass.JaggedArray();*/
 
-
+/*
 using BasicPrograms;
 using BasicPrograms.ExeptionMessage;
-using System.Transactions;
+using System.Transactions;*/
 
 /*StudentMarks studentMarks = new StudentMarks(*//*12, "vyshnav", "trivandrum", 34, 43, 23, 0, 0.0*//*);
 studentMarks.RollNumber = 1;
@@ -173,7 +173,7 @@ genericCollection.ListHandling();
 genericCollection.StackHandling();
 genericCollection.DictionaryHandling();*/
 
-ExceptionHandling exceptionHandling=new ExceptionHandling(15,45);
+/*ExceptionHandling exceptionHandling=new ExceptionHandling(15,45);
 //exceptionHandling.Divide();
 try
 {
@@ -182,4 +182,12 @@ try
 catch(NumberOneException numExcep)
 {
     Console.WriteLine(numExcep.Message);
-}
+}*/
+using BasicPrograms;
+
+FileOperation fileOperation = new FileOperation();
+/*fileOperation.CreateFile();
+fileOperation.WriteData();*/
+//fileOperation.ReadData();
+//fileOperation.CopyMoveFile();
+fileOperation.FileProperties();

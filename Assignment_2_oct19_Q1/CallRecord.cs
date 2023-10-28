@@ -21,7 +21,8 @@ namespace Assignment_2_oct19_Q1
             {
                 foreach(var record in allcalls)
                 {
-                    Console.WriteLine("callid:{0}\tPhoneNumber:{1}\tCall Time:{2}",CallId,PhoneNumber,CallTime);
+                    Console.WriteLine("callid:{0}\tPhoneNumber:{1}\tCall Time:{2}",CallId,PhoneNumber
+                        ,CallTime);
                 }
             }
             else
