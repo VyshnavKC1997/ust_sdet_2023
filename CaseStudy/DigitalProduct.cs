@@ -14,12 +14,24 @@ namespace CaseStudy
         public static List<DigitalProduct> Products = new List<DigitalProduct>();
         public void DeliveringProduct()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Download link is {0}",DownloadLink);
         }
 
         public void PlacingOrder()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Do you want to continue the order\n1.yes\n2.no");
+            int option = Convert.ToInt32(Console.ReadLine());
+            if (option == 1)
+            {
+                if (ProductQuantity > 0)
+                    Console.WriteLine("Continue to payment");
+                else
+                    Console.WriteLine("product not available");
+            }
+            else
+            {
+                Console.WriteLine("reverting");
+            }
         }
 
         public void ProcessingPayment()
