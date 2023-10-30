@@ -128,21 +128,25 @@ Customer1.customers.Add(customer13);
 
 while (true)
 {
+    Console.Clear();
     Console.WriteLine("choose your option\n1.User\n2.Admin");
     int option = Convert.ToInt32(Console.ReadLine());
   
         if (option == 1)
 
         {
+            Console.Clear() ;
             Console.WriteLine("Enter the customer id");
             int cusId = Convert.ToInt32(Console.ReadLine());
             if (Customer1.customers.Find(x => x.CustomerID == cusId) == null)
             {
+                Console.Clear();
                 Console.WriteLine("Customer not found");
                 break;
             }
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("choose your option\n1.Add product to cart\n2.view all product\n3.place order\n4.Support\n5.view orders");
             int optionuser = Convert.ToInt32(Console.ReadLine());
         
@@ -150,7 +154,25 @@ while (true)
             {
 
                 case 1:
-
+                    Console.Clear();
+                    if (DigitalProduct.Products.Count == 0 && PhysicalProduct.Products.Count == 0)
+                    {
+                        Console.WriteLine("No Product Found found");
+                    }
+                    foreach (var item in DigitalProduct.Products)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("products are");
+                        Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
+                            item.ProductName, item.Price, item.ProductQuantity, item.FileFormat, item.DownloadLink);
+                    }
+                    foreach (var item in PhysicalProduct.Products)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
+                            "\tDimension:{5}", item.ProductId,
+                            item.ProductName, item.Price, item.ProductQuantity, item.ProductQuantity, item.Dimension);
+                    }
                     Console.WriteLine("Enter Product id for add to cart");
                     int productId = Convert.ToInt32(Console.ReadLine());
                     Customer1 customer1 = Customer1.customers.Find(x => x.CustomerID == cusId);
@@ -158,21 +180,25 @@ while (true)
                     {
                         if (PhysicalProduct.Products.Find(x => x.ProductId == productId) == null)
                         {
+                            Console.Clear();
                             Console.WriteLine("invalid product id");
                         }
                         else
                         {
+                            Console.Clear();
                             customer1.ordersphy.Add(PhysicalProduct.Products.Find(x => x.ProductId == productId));
                             Console.WriteLine("product added to cart");
                         }
                     }
                     else
                     {
+                        Console.Clear();
                         customer1.orders.Add(DigitalProduct.Products.Find(x => x.ProductId == productId));
                         Console.WriteLine("product added to cart");
                     }
                     break;
                 case 2:
+                    Console.Clear();    
                     Console.WriteLine("Products are");
                     if (DigitalProduct.Products.Count == 0 && PhysicalProduct.Products.Count == 0)
                     {
@@ -180,11 +206,13 @@ while (true)
                     }
                     foreach (var item in DigitalProduct.Products)
                     {
+                        Console.Clear();
                         Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
                             item.ProductName, item.Price, item.ProductQuantity, item.FileFormat, item.DownloadLink);
                     }
                     foreach (var item in PhysicalProduct.Products)
                     {
+                        
                         Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
                             "\tDimension:{5}", item.ProductId,
                             item.ProductName, item.Price, item.ProductQuantity, item.ProductQuantity, item.Dimension);
@@ -194,12 +222,14 @@ while (true)
                     Customer1 customer = Customer1.customers.Find(x => x.CustomerID == cusId);
                     if (customer.orders.Count == 0 && customer.ordersphy.Count == 0)
                     {
+                        Console.Clear();
                         Console.WriteLine("no product found in cart");
                     }
                     else
                     {
                         foreach (var item in customer.orders)
                         {
+                            Console.Clear();
                             Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
                              item.ProductName, item.Price, item.ProductQuantity, item.FileFormat, item.DownloadLink);
                             item.PlacingOrder();
@@ -209,6 +239,7 @@ while (true)
                         }
                         foreach (var item in customer.ordersphy)
                         {
+                            Console.Clear();
                             Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
                            "\tDimension:{5}", item.ProductId,
                            item.ProductName, item.Price, item.ProductQuantity, item.ProductQuantity, item.Dimension);
@@ -216,7 +247,8 @@ while (true)
                             item.ProcessingPayment();
                             item.DeliveringProduct();
                         }
-                        Console.WriteLine("do you want to place all the order\n1.yes\n2.no");
+                          
+                        Console.WriteLine("do you want to continue with this order\n1.yes\n2.no");
                         int confirm = Convert.ToInt32(Console.ReadLine());
                         if (confirm == 1)
                         {
@@ -224,10 +256,12 @@ while (true)
                             customer.orders.Clear();
                             customer.confirmedordersphy.AddRange(customer.ordersphy);
                             customer.ordersphy.Clear();
+                            Console.Clear();
                             Console.WriteLine("order placed successfully");
                         }
                         else
                         {
+                            Console.Clear();    
                             Console.WriteLine("removing everything in cart");
                         }
 
@@ -238,16 +272,19 @@ while (true)
 
                     break;
                 case 4:
+                    Console.Clear();
                     Console.WriteLine("call this number for support 96456636727");
                     break;
                 case 5:
                     Customer1 customer2 = Customer1.customers.Find(x => x.CustomerID == cusId);
                     if (customer2.confirmedorders.Count == 0 && customer2.confirmedordersphy.Count == 0)
                     {
+                        Console.Clear();
                         Console.WriteLine("no order details found");
                     }
                     else
                     {
+                        Console.Clear();
                         Console.WriteLine("Orders are");
                         foreach (var item in customer2.confirmedorders)
                         {
@@ -263,11 +300,12 @@ while (true)
                     }
                     break;
                 default:
+                    Console.Clear ();
                     Console.WriteLine("invalid input");
 
                     break;
             }
-
+         
             Console.WriteLine("do you want to continue as user\n1.yes\n2.no");
             int optuser = Convert.ToInt32(Console.ReadLine());
             if (optuser == 1)
@@ -280,6 +318,7 @@ while (true)
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("invalid input");
             }
         }
@@ -289,14 +328,17 @@ while (true)
     
         else if (option == 2)
         {
-        Console.WriteLine("choose option\n1.Add Product\n2.View report");
+        Console.Clear();
+        Console.WriteLine("choose option\n1.Add Product");
         int optionadmin=Convert.ToInt32(Console.ReadLine());
         if(optionadmin == 1)
         {
+            Console.Clear();
             Console.WriteLine("choose the option \n1.Digital Product\n2.Physical Product");
             int optionProduct=Convert.ToInt32(Console.ReadLine());
             if(optionProduct == 1)
             {
+                Console.Clear();
                 Console.WriteLine("Enter Product id");
                 int productid=Convert.ToInt32(Console.ReadLine()) ;
                 Console.WriteLine("Enter Product Name");
@@ -322,6 +364,7 @@ while (true)
             }
             else if(optionProduct==2)
             {
+                Console.Clear();
                 Console.WriteLine("Enter Product id");
                 int productid = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter Product Name");
@@ -348,14 +391,49 @@ while (true)
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine("Invalid");
             }
         }
+        else if (optionadmin == 2)
+        {
+            Console.WriteLine("User list is ");
+            foreach (var item1 in Customer1.customers)
+            {
+
+                Console.WriteLine("customer name:{0}", item1.CustomerName);
+            }
+                Console.WriteLine("Total product available are");
+                if (DigitalProduct.Products.Count == 0 && PhysicalProduct.Products.Count == 0)
+                {
+                    Console.WriteLine("No Product Found found");
+                }
+                foreach (var item in DigitalProduct.Products)
+                {
+                  
+                    Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tFileFormat:{4}\tDownloadlink:{5}", item.ProductId,
+                        item.ProductName, item.Price, item.ProductQuantity, item.FileFormat, item.DownloadLink);
+                }
+                foreach (var item in PhysicalProduct.Products)
+                {
+
+                    Console.WriteLine("Productid:{0}\tProduct Name:{1}\tPrice:{2}\tProduct Quantity:{3}\tWeight:{4}" +
+                        "\tDimension:{5}", item.ProductId,
+                        item.ProductName, item.Price, item.ProductQuantity, item.ProductQuantity, item.Dimension);
+                }
+               
+            
+        }
     }
+
+
+       
         else
         {
+        Console.Clear();
             Console.WriteLine("invalid option");
         }
+       
         Console.WriteLine("do you want to continue\n1.yes\n2.no");
         int opt = Convert.ToInt32(Console.ReadLine());
         if (opt == 1)
@@ -368,6 +446,7 @@ while (true)
         }
         else
         {
+        Console.Clear();
             Console.WriteLine("invalid input");
         }
     

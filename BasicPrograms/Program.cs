@@ -183,11 +183,25 @@ catch(NumberOneException numExcep)
 {
     Console.WriteLine(numExcep.Message);
 }*/
-using BasicPrograms;
+/*using BasicPrograms;
 
 FileOperation fileOperation = new FileOperation();
-/*fileOperation.CreateFile();
-fileOperation.WriteData();*/
+*//*fileOperation.CreateFile();
+fileOperation.WriteData();*//*
 //fileOperation.ReadData();
 //fileOperation.CopyMoveFile();
-fileOperation.FileProperties();
+fileOperation.FileProperties();*/
+
+using BasicPrograms;
+
+/*GenEx<int> genEx = new GenEx<int>(12,12);
+Console.WriteLine(genEx.Val1+"\t"+genEx.Val2);
+
+GenEx<double> genEx1 = new GenEx<double>(12.5, 15.4);
+Console.WriteLine(genEx1.Val1 + "\t" + genEx1.Val2);
+
+GenEx<string> genEx2 = new GenEx<string>("Vyshnav","KC");
+Console.WriteLine(genEx2.Val1 + " " + genEx2.Val2);*/
+
+GenEx<int> genEx3 = new GenEx<int>(new int[] { 1, 2, 3, 4 });
+genEx3.Display();
