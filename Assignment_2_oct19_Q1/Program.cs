@@ -259,7 +259,7 @@ using Assignment_2_oct19_Q1.ExceptionHandling;
     }
 }
 */
-
+/*
 while (true)
 {
     Console.WriteLine("choose your option\n1.Add patient history\n2.View patient history");
@@ -332,4 +332,71 @@ while (true)
         Console.WriteLine("invalid input");
     }
 
+}*/
+
+HotelReservation<HotelRoom> hotelReservation = new HotelReservation<HotelRoom>();
+
+while (true)
+{
+    Console.WriteLine("choose option \n1.Bookroom \n2.cancel room");
+    int option = Convert.ToInt32(Console.ReadLine());
+    if (option == 1)
+    {
+        Console.WriteLine("Enter the room number");
+        int roomnumber = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter room type");
+        string? roomtype = Console.ReadLine();
+        HotelRoom room = new HotelRoom();
+        room.IsBooked = true;
+        room.RoomType = roomtype;
+        room.RoomNumber = roomnumber;
+        hotelReservation.BookRoom(room);
+    }
+    else if (option == 2)
+    {
+        Console.WriteLine("Enter the room number to cancel");
+        int roomnumberCancel= Convert.ToInt32(Console.ReadLine());
+       HotelRoom roomobj= HotelReservation<HotelRoom>.listOfHotelRoom.Find(x=> x.RoomNumber == roomnumberCancel); 
+       if( roomobj != null )
+        {
+            hotelReservation.CancelRoom(roomobj);
+        }
+        else
+        {
+            Console.WriteLine("room is not booked");
+        }
+    }
+    else
+    {
+        Console.WriteLine("invalid");
+    }
+    Console.WriteLine("Do you want to continue \n1.yes\n2.no");
+    int exitoption= Convert.ToInt32(Console.ReadLine());
+    if(exitoption == 1)
+    {
+        continue;
+    }
+    else if(exitoption == 2)
+    {
+        Environment.Exit(0);
+    }
+    else
+    {
+        Console.WriteLine("Invalid option");
+    }
 }
+
+/*HotelRoom room1 = new HotelRoom();
+room1.IsBooked = true;
+room1.RoomType = "Double";
+room1.RoomNumber = 2;
+
+HotelRoom room2 = new HotelRoom();
+room2.IsBooked = true;
+room2.RoomType = "Double";
+room2.RoomNumber = 3;*/
+
+
+
+
+
