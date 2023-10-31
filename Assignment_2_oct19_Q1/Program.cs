@@ -333,7 +333,7 @@ while (true)
     }
 
 }*/
-
+/*
 HotelReservation<HotelRoom> hotelReservation = new HotelReservation<HotelRoom>();
 
 while (true)
@@ -384,7 +384,7 @@ while (true)
     {
         Console.WriteLine("Invalid option");
     }
-}
+}*/
 
 /*HotelRoom room1 = new HotelRoom();
 room1.IsBooked = true;
@@ -396,7 +396,69 @@ room2.IsBooked = true;
 room2.RoomType = "Double";
 room2.RoomNumber = 3;*/
 
+/*class Program
+{
+    public delegate double bonusCalculation(EmployeeClass employee);
+    public static void Main(string[] args)
+    {
+        EmployeeClass employee = new EmployeeClass(1,"vyshnav",3.5);
+        EmployeeClass employee1 = new EmployeeClass(2, "vishnu", 4.2);
+        EmployeeClass employee2 = new EmployeeClass(3, "vikas", 4.1);
+        bonusCalculation bonus = EmployeeClass.BonusCalc;
+        bonusCalculation bonus2 = EmployeeClass.BonusCalcAccount;
+        Console.WriteLine("Id:{0}\tName:{1}\tPerformance:{2}\tNormal bonus:{3}\tOnam bonus:{4}",employee.EmployeeId,
+            employee.EmployeeName,employee.PerformanceRating,bonus(employee),bonus2(employee));
+        Console.WriteLine("Id:{0}\tName:{1}\tPerformance:{2}\tNormal bonus:{3}\tOnam bonus:{4}", employee1.EmployeeId,
+          employee1.EmployeeName, employee1.PerformanceRating, bonus(employee1), bonus2(employee1));
+        Console.WriteLine("Id:{0}\tName:{1}\tPerformance:{2}\tNormal bonus:{3}\tOnam bonus:{4}", employee2.EmployeeId,
+         employee2.EmployeeName, employee2.PerformanceRating, bonus(employee2), bonus2(employee2));
+    }
+}*/
 
+class Program
+{
+    static int capacity = 1898;
+    public delegate void EventDelegate(HotelEvent hotel);
+    public static void Main(string[] args)
+    {
+        while (true)
+        {
+            HotelEvent hotelEvent = new HotelEvent();
+            Console.WriteLine("Enter the Event Name");
+            string? eventName = Console.ReadLine();
+            Console.WriteLine("Enter Event Date");
+            string? eventDate = Console.ReadLine();
+            Console.WriteLine("Enter the Event Location");
+            string? eventLocation = Console.ReadLine();
+
+            if (capacity < 2000)
+            {
+                EventDelegate eventDelegate = HotelEvent.PrintRegisterationDetails;
+                eventDelegate(hotelEvent);
+                capacity++;
+            }
+            else
+            {
+                EventDelegate eventDelegate = HotelEvent.CapacityFull;
+                eventDelegate(hotelEvent);
+            }
+            Console.WriteLine("do you want to register another user\nyes-1\nno-2");
+            int option=Convert.ToInt32(Console.ReadLine());
+            if(option == 1)
+            {
+                continue;
+            }
+            else if (option == 2)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("invalid option");
+            }
+        }
+    }
+}
 
 
 

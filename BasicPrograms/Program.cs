@@ -193,6 +193,7 @@ fileOperation.WriteData();*//*
 fileOperation.FileProperties();*/
 
 using BasicPrograms;
+using System.Reflection;
 
 /*GenEx<int> genEx = new GenEx<int>(12,12);
 Console.WriteLine(genEx.Val1+"\t"+genEx.Val2);
@@ -202,6 +203,25 @@ Console.WriteLine(genEx1.Val1 + "\t" + genEx1.Val2);
 
 GenEx<string> genEx2 = new GenEx<string>("Vyshnav","KC");
 Console.WriteLine(genEx2.Val1 + " " + genEx2.Val2);*/
-
+/*
 GenEx<int> genEx3 = new GenEx<int>(new int[] { 1, 2, 3, 4 });
 genEx3.Display();
+*/
+
+
+public delegate void Mydelegate(string a);  
+//Mydelegate mydelegate = DelegateExample.MethodA;
+
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Action<int, int> action = DelegateExample.MethodB;
+        action(1, 2);
+
+        Mydelegate del = DelegateExample.MethodA;
+        del("hello ");
+       // Console.WriteLine(del.GetType());
+    }
+}
