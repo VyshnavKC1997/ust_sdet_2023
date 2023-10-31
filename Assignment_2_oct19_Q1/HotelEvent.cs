@@ -16,12 +16,15 @@ namespace Assignment_2_oct19_Q1
 
         public static void PrintRegisterationDetails(HotelEvent hotelEvent)
         {
+            Console.Clear();
             Console.WriteLine("Successfully Registered for the event {0} on {1} in {2}",hotelEvent.EventName,
                 hotelEvent.EventDate,hotelEvent.Location);
         }
         public static void CapacityFull(HotelEvent hotelEvent)
         {
+            Console.Clear();
             Console.WriteLine("Capacity for Event {0} is full", hotelEvent.EventName);
+            Environment.Exit(0);
         }
     }
 }

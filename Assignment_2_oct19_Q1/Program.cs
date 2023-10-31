@@ -417,7 +417,7 @@ room2.RoomNumber = 3;*/
 
 class Program
 {
-    static int capacity = 1898;
+    static int capacity = 1998;
     public delegate void EventDelegate(HotelEvent hotel);
     public static void Main(string[] args)
     {
@@ -442,6 +442,7 @@ class Program
                 EventDelegate eventDelegate = HotelEvent.CapacityFull;
                 eventDelegate(hotelEvent);
             }
+            Thread.Sleep(2000);
             Console.WriteLine("do you want to register another user\nyes-1\nno-2");
             int option=Convert.ToInt32(Console.ReadLine());
             if(option == 1)
