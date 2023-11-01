@@ -415,7 +415,7 @@ room2.RoomNumber = 3;*/
     }
 }*/
 
-class Program
+/*class Program
 {
     static int capacity = 1998;
     public delegate void EventDelegate(HotelEvent hotel);
@@ -430,7 +430,10 @@ class Program
             string? eventDate = Console.ReadLine();
             Console.WriteLine("Enter the Event Location");
             string? eventLocation = Console.ReadLine();
-
+            hotelEvent.EventName = eventName;
+            hotelEvent.EventDate = eventDate;   
+            hotelEvent.Location = eventLocation;
+            hotelEvent.Capacity = capacity; 
             if (capacity < 2000)
             {
                 EventDelegate eventDelegate = HotelEvent.PrintRegisterationDetails;
@@ -459,7 +462,42 @@ class Program
             }
         }
     }
-}
+}*/
+
+/*List<TourismDestination> tourismDestinations = new List<TourismDestination>();
+TourismDestination tourism = new("name", "india", 3.8);
+TourismDestination tourism1 = new("name1", "india", 3.6);
+TourismDestination tourism2 = new("name2", "UK", 4.2);
+TourismDestination tourism3 = new("name3", "UAE", 2.3);
+TourismDestination tourism4= new("name4", "america", 3.3);
+
+tourismDestinations.Add(tourism);
+tourismDestinations.Add(tourism1);
+tourismDestinations.Add(tourism2);
+tourismDestinations.Add(tourism3);
+tourismDestinations.Add(tourism4);
+tourism.SortListOfTour(tourismDestinations);*/
 
 
+TourismDestinationSecond tourism = new("name", "india", 3.8,4000);
+TourismDestinationSecond tourism1 = new("name1", "india", 3.6, 3000);
+TourismDestinationSecond tourism2 = new("name2", "UK", 4.2,10000);
+TourismDestinationSecond tourism3 = new("name3", "UAE", 2.3,1200);
+TourismDestinationSecond tourism4 = new("name4", "america", 3.3,1100);
 
+TourismDestinationSecond.tourismDestinations.Add(tourism);
+TourismDestinationSecond.tourismDestinations.Add(tourism1);
+TourismDestinationSecond.tourismDestinations.Add(tourism2);
+TourismDestinationSecond.tourismDestinations.Add(tourism3);
+TourismDestinationSecond.tourismDestinations.Add(tourism4);
+
+Console.WriteLine("Enter the rating to search");
+double ar=Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("top rated destination are");
+tourism.TopRatedDestination(ar);
+Console.WriteLine("list in ascending order");
+tourism.SortingWithPrice();
+Console.WriteLine("Enter city Name to filter");
+string? city=Console.ReadLine();
+Console.WriteLine("Tourist destination in {0}", city);
+tourism.FilterWithCityName(city);
