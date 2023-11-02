@@ -507,6 +507,6 @@ Hotel hotel = new Hotel("name",4,"ars","adfgas",45);
 Hotel hotel1 = new Hotel("nam3", 6, "ars", "adfgas", 45);
 Hotel hotel2 = new Hotel("name6", 17, "ars", "adfgas", 45);
 
-await hotel.HotelBookingig(4,hotel);
-await hotel1.HotelBookingig(6,hotel1);
-await hotel2.HotelBookingig(17,hotel2);
+await hotel.HotelBookingig(3);
+await hotel1.HotelBookingig(7);
+await hotel2.HotelBookingig(7);
