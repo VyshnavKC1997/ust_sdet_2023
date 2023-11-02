@@ -503,10 +503,28 @@ Console.WriteLine("Tourist destination in {0}", city);
 tourism.FilterWithCityName(city);*/
 
 
-Hotel hotel = new Hotel("name",4,"ars","adfgas",45);
+/*Hotel hotel = new Hotel("name",4,"ars","adfgas",45);
 Hotel hotel1 = new Hotel("nam3", 6, "ars", "adfgas", 45);
 Hotel hotel2 = new Hotel("name6", 17, "ars", "adfgas", 45);
 
 await hotel.HotelBookingig(3);
 await hotel1.HotelBookingig(7);
-await hotel2.HotelBookingig(7);
+await hotel2.HotelBookingig(7);*/
+
+TourPackage package=new TourPackage(1,"kochi","12-1-2025",1200);
+TourPackage package1 = new TourPackage(2, "alappuzha", "12-1-2024", 1400);
+TourPackage package2 = new TourPackage(3, "kannur", "12-12-2023", 1500);
+
+TourPackage.TourPackages.Add(package1);
+TourPackage.TourPackages.Add(package2);
+TourPackage.TourPackages.Add(package);
+
+
+Thread thread = new Thread(TourPackage.HotelReservation);
+
+Thread thread1 = new Thread(TourPackage.HotelReservation);
+
+thread1.Start();
+thread1.Join();
+thread.Start();
+
