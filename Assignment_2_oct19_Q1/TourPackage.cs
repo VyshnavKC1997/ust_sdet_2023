@@ -25,12 +25,19 @@ namespace Assignment_2_oct19_Q1
        public static void HotelReservation()
         {
           
-            Console.WriteLine("Enter the id to book");
+            Console.WriteLine("Enter the id to book package");
             int a=Convert.ToInt32(Console.ReadLine());
             lock(TourPackages)
             {
                 var b=TourPackages.Find(x=>x.PackageId==a);
-                Console.WriteLine("package booked Destination:{0}\tStartSate:{1}\tPrice:{2}",b.Destination,b.StartDate,b.Price);
+                if (b == null)
+                {
+                    Console.WriteLine("id is not available");
+                }
+                else
+                {
+                    Console.WriteLine("package booked Destination:{0}\tStartSate:{1}\tPrice:{2}", b.Destination, b.StartDate, b.Price);
+                }
             }
         }
 

@@ -15,7 +15,7 @@ namespace Assignment_2_oct19_Q1
             HotelName = hotelName;
             AvailableRoom = availableRoom;
         }
-
+        
         public string? HotelName { get; set; }
         public int AvailableRoom {  get; set; }
 
