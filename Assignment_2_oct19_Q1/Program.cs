@@ -478,7 +478,7 @@ tourismDestinations.Add(tourism3);
 tourismDestinations.Add(tourism4);
 tourism.SortListOfTour(tourismDestinations);*/
 
-
+/*
 TourismDestinationSecond tourism = new("name", "india", 3.8,4000);
 TourismDestinationSecond tourism1 = new("name1", "india", 3.6, 3000);
 TourismDestinationSecond tourism2 = new("name2", "UK", 4.2,10000);
@@ -500,4 +500,13 @@ tourism.SortingWithPrice();
 Console.WriteLine("Enter city Name to filter");
 string? city=Console.ReadLine();
 Console.WriteLine("Tourist destination in {0}", city);
-tourism.FilterWithCityName(city);
+tourism.FilterWithCityName(city);*/
+
+
+Hotel hotel = new Hotel("name",4,"ars","adfgas",45);
+Hotel hotel1 = new Hotel("nam3", 6, "ars", "adfgas", 45);
+Hotel hotel2 = new Hotel("name6", 17, "ars", "adfgas", 45);
+
+await hotel.HotelBookingig(4,hotel);
+await hotel1.HotelBookingig(6,hotel1);
+await hotel2.HotelBookingig(17,hotel2);
