@@ -528,7 +528,7 @@ thread1.Start();
 thread1.Join();
 thread.Start();*/
 
-
+/*
 TaskItem ts= new TaskItem(1,"study",false);
 TaskItem ts1 = new TaskItem(2, "play", true);
 TaskItem ts2 = new TaskItem(3, "gym", true);
@@ -555,4 +555,20 @@ TaskItem.TaskItems.RemoveAll(x=>x.TaskId==rem);
 Console.WriteLine("Task removed succeessfully");
 
 Console.WriteLine("Total Tasks Are");
-TaskItem.FilteringTask();
+TaskItem.FilteringTask();*/
+
+
+
+FamilyMember grandparent = new FamilyMember("Grandparent", 70);
+FamilyMember parent1 = new FamilyMember("Parent 1", 40);
+FamilyMember parent2 = new FamilyMember("Parent 2", 38);
+FamilyMember child1 = new FamilyMember("Child 1", 12);
+FamilyMember child2 = new FamilyMember("Child 2", 8);
+
+grandparent.AddChild(parent1);
+grandparent.AddChild(parent2);
+parent1.AddChild(child1);
+parent2.AddChild(child2);
+
+FamilyTree familyTree = new FamilyTree(grandparent);
+familyTree.DisplayFamilyTree();
