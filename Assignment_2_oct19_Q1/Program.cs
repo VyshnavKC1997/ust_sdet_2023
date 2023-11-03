@@ -511,7 +511,7 @@ await hotel.HotelBookingig(3);
 await hotel1.HotelBookingig(7);
 await hotel2.HotelBookingig(7);*/
 
-TourPackage package=new TourPackage(1,"kochi","12-1-2025",1200);
+/*TourPackage package=new TourPackage(1,"kochi","12-1-2025",1200);
 TourPackage package1 = new TourPackage(2, "alappuzha", "12-1-2024", 1400);
 TourPackage package2 = new TourPackage(3, "kannur", "12-12-2023", 1500);
 
@@ -526,5 +526,33 @@ Thread thread1 = new Thread(TourPackage.HotelReservation);
 
 thread1.Start();
 thread1.Join();
-thread.Start();
+thread.Start();*/
 
+
+TaskItem ts= new TaskItem(1,"study",false);
+TaskItem ts1 = new TaskItem(2, "play", true);
+TaskItem ts2 = new TaskItem(3, "gym", true);
+TaskItem ts3 = new TaskItem(4, "work", false);
+
+TaskItem.TaskItems.Add(ts);
+TaskItem.TaskItems.Add(ts1);
+TaskItem.TaskItems.Add(ts2);
+TaskItem.TaskItems.Add(ts3);
+
+Console.WriteLine("Do you want to change the status of task enter the id to change");
+int id=Convert.ToInt32(Console.ReadLine()); 
+var changeObj=TaskItem.TaskItems.Find(x=>x.TaskId==id);
+if (changeObj != null)
+{
+    changeObj.IsCompleted = true;
+    Console.WriteLine("changed the status as completed");
+}
+else
+    Console.WriteLine("id not found");
+Console.WriteLine("Enter the id to remove Task");
+int rem=Convert.ToInt32(Console.ReadLine());
+TaskItem.TaskItems.RemoveAll(x=>x.TaskId==rem);
+Console.WriteLine("Task removed succeessfully");
+
+Console.WriteLine("Total Tasks Are");
+TaskItem.FilteringTask();
